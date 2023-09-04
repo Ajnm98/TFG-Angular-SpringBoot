@@ -1,0 +1,23 @@
+Base de Datos:
+    - Instalar Docker Desktop
+    - Hacer 'cd .\docker\' a la carpeta docker y ejecutar 'docker compose up' en la terminal para crear contenedor en Docker Desktop
+    - Ahora, en el puerto localhost:9000 tenemos el adminer. Servidor: mariadb Usuario:root Password:password
+    - Debemos ver nuestra BD 'TFG', si no es así consultar página y ejecutar los comandos:
+          https://ruile.medium.com/how-to-connect-a-mysql-docker-container-with-a-local-spring-boot-application-9366707dce0d
+
+          Puede que debamos abrir la terminal desde docker desktop: Desde la imagen de mariadb -> actions -> open in terminal
+
+          mysql -uroot -ppassword;
+          create database TFG;
+          create or replace user root identified by 'password';
+          grant all on TFG.* to root;
+
+          Actualizar la página del adminer y debe estar la base de datos con los modelos que tengamos aquí.
+
+
+Login con SpringSecurity:
+    - Todo lo que tenga que ver con el login está en esta página:
+                      https://www.bezkoder.com/spring-boot-jwt-authentication/
+
+       Para los roles hay que insertar los roles en la tabla roles
+
